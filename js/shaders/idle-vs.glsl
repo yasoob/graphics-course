@@ -4,12 +4,14 @@ Shader.source[document.currentScript.src.split('js/shaders/')[1]] = `#version 30
   uniform struct{
   	vec3 position;
   } gameObject;
-
+  
+  out vec4 worldPosition;
   out vec4 color;
 
   void main(void) {
     gl_Position = vertexPosition;
     gl_Position.xyz += gameObject.position;
+    worldPosition = gl_Position;
     color = vertexColor;
   }
 `;

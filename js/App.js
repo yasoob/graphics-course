@@ -58,6 +58,18 @@ class App{
     this.scene.update(this.gl, this.keysPressed);
     // this.overlay.innerHTML = `<div style="position:absolute;left:${this.textLeft}px;bottom:-${this.textBottom}px"> ${JSON.stringify(this.keysPressed)}</div>`;
     // refresh
+    // console.log(JSON.stringify(this.keysPressed));
+    if (this.keysPressed['UP']){
+      this.scene.moveAvatar({x:0, y:0.5, z:0});
+    } else if (this.keysPressed['DOWN']){
+      this.scene.moveAvatar({ x: 0, y: -0.5, z: 0 });      
+    } else if (this.keysPressed['LEFT']) {
+      this.scene.moveAvatar({ x: -0.5, y: 0, z: 0 });
+    } else if (this.keysPressed['RIGHT']) {
+      this.scene.moveAvatar({ x: 0.5, y: 0, z: 0 });
+    } else {
+      this.scene.moveAvatar({ x: 0, y: 0, z: 0 });
+    }
     window.requestAnimationFrame( () => this.update() );
   }
 }

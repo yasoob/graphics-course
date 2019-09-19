@@ -20,7 +20,6 @@ class HeartGeometry {
       var x = xPos(localOffset)/totalCorners;
       var y = yPos(localOffset)/totalCorners;
       heartArray.push(x, y, 0.5);
-      console.log(i, x, y);
     }
     
     // heartArray.push(heartArray[3]);
