@@ -9,12 +9,12 @@ class StarGeometry {
 
     var starArray = [0,0,0.5];
     var drawInstructions = [];
-    var radius = 0.5;
+    var radius = 0.2;
     var totalCorners = 5;
     var offset = Math.PI/totalCorners;
     for (var i=0; i<totalCorners; i++) {
-      var internal_x = Math.sin(Math.PI * 2 * (i/totalCorners)) * (radius-0.3);
-      var internal_y = Math.cos(Math.PI * 2 * (i/totalCorners)) * (radius-0.3);
+      var internal_x = Math.sin(Math.PI * 2 * (i/totalCorners)) * (radius-0.12);
+      var internal_y = Math.cos(Math.PI * 2 * (i/totalCorners)) * (radius-0.12);
 
       var external_x = Math.sin((Math.PI * 2 * (i/totalCorners)) + offset) * radius;
       var external_y = Math.cos((Math.PI * 2 * (i/totalCorners)) + offset) * radius;

@@ -3,6 +3,7 @@ Shader.source[document.currentScript.src.split('js/shaders/')[1]] = `#version 30
   in vec4 vertexColor;
   uniform struct{
   	vec3 position;
+    float time;
   } gameObject;
   
   out vec4 worldPosition;
@@ -13,5 +14,6 @@ Shader.source[document.currentScript.src.split('js/shaders/')[1]] = `#version 30
     gl_Position.xyz += gameObject.position;
     worldPosition = gl_Position;
     color = vertexColor;
+    color.b = vertexColor.b * sin(gameObject.time);
   }
 `;
